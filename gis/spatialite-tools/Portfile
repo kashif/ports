@@ -1,0 +1,36 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem		1.0
+
+name 			spatialite-tools
+version 		2.3.1
+categories 		gis
+platforms		darwin
+maintainers		nomad-labs.com:kashif
+description		Spatialite tools
+long_description	Spatialite tools provides a set of useful CLI tools such as \
+				spatialite: a complete CLI front-end, spatialite_network: a tool \
+				supporting the creation of networks, spatialite_tool: a tool \
+				supporting import/export of shapefiles, shp_doctor: a diagnostic \
+				tool to check anomalous shapefiles, and exif_loader: an import tool \
+				for EXIF or EXIF-GPS pictures.
+
+homepage		http://www.gaia-gis.it/spatialite/
+platforms		darwin
+master_sites	${homepage}
+
+checksums		md5     40895fd4bf7a21b3629c9face258dcd6 \
+				sha1    f6179f20054118c0209c07e36f4e8fae87482530 \
+				rmd160  ca7b6ebf5a3e302bbecfefe1543f70d5c14ca76f
+
+depends_lib		port:readline \
+				port:libspatialite \
+				port:geos \
+				port:proj
+
+configure.ldflags-append	-liconv -lintl -lcharset
+configure.args	--enable-geos --with-geos-lib=${prefix}/lib --with-geos-include=${prefix}/include \
+				--enable-proj --with-proj-lib=${prefix}/lib --with-proj-include=${prefix}/include \
+				--with-spatialite-lib=${prefix}/lib
+
