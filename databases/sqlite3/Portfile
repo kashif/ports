@@ -1,4 +1,5 @@
-# $Id: Portfile 60211 2009-11-05 16:12:10Z mww@macports.org $
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
 
 PortSystem 1.0
 
@@ -7,7 +8,7 @@ version			3.6.20
 revision		1
 categories		databases
 platforms		darwin
-maintainers		mww
+maintainers		nomad-labs.com:kashif
 description		an embedded SQL database engine
 long_description	SQLite3 is an SQL database engine in a C library. \
 				Programs that link the SQLite3 library can have SQL \

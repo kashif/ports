@@ -1,4 +1,5 @@
-# $Id: Portfile 40948 2008-10-18 20:05:04Z ryandesign@macports.org $
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
 
 PortSystem 1.0
 
@@ -6,7 +7,7 @@ name			libspatialite
 version			2.3.1
 categories		databases gis
 platforms		darwin
-maintainers		landonf openmaintainer
+maintainers		nomad-labs.com:kashif
 description		Spatial extensions for SQLite 3
 long_description	SpatiaLite is a library for geographic information \
 			systems (GIS) that implements the core OpenGIS \
