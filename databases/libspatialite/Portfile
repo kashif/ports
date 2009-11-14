@@ -1,0 +1,51 @@
+# $Id: Portfile 40948 2008-10-18 20:05:04Z ryandesign@macports.org $
+
+PortSystem 1.0
+
+name			libspatialite
+version			2.3.1
+categories		databases gis
+platforms		darwin
+maintainers		landonf openmaintainer
+description		Spatial extensions for SQLite 3
+long_description	SpatiaLite is a library for geographic information \
+			systems (GIS) that implements the core OpenGIS \
+			specification. It provides SQLite with basic support \
+			for spatial data is intended for lightweight GIS \
+			projects.
+
+homepage		http://www.gaia-gis.it/spatialite/
+master_sites		${homepage}
+
+distfiles		libspatialite-amalgamation-${version}.tar.gz \
+			init_spatialite-2.3.sql.gz
+
+extract.only		libspatialite-amalgamation-${version}.tar.gz
+
+worksrcdir		libspatialite-amalgamation-${version}
+
+checksums		libspatialite-amalgamation-${version}.tar.gz \
+				md5	3e1b15a55a0bd511e6437fdb604a10b1 \
+				sha1	7582979576c12be1952aa85334b1d0a143485a12 \
+				rmd160	64f8ea11f30a66c5f9eb304308bc01dca75b646a \
+			init_spatialite-2.3.sql.gz \
+				md5	3a12245d8254624950550490ffa6bcf3 \
+				sha1	7bd814b973f439c99e6d21be82bc445bb4248e1e \
+				rmd160	c9055ebcddc5dd93aa900c3c130ecba025f4a09a
+
+depends_lib		port:sqlite3 \
+			port:geos \
+			port:proj
+
+configure.args		--enable-geos --with-geos-lib=${prefix}/lib --with-geos-include=${prefix}/include \
+  					--enable-proj --with-proj-lib=${prefix}/lib --with-proj-include=${prefix}/include
+
+					use_parallel_build      no
+					build.type              gnu
+
+post-destroot {
+	# Set up the init SQL
+	set sharedir ${destroot}/${prefix}/share/spatialite
+	file mkdir ${sharedir}
+	system "gzip -cd ${distpath}/init_spatialite-2.3.sql.gz > ${sharedir}/init_spatialite-2.3.sql"
+}
