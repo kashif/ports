@@ -38,6 +38,7 @@ depends_lib		port:sqlite3 \
 			port:geos \
 			port:proj
 
+configure.ldflags-append	-liconv -lintl -lcharset
 configure.args		--enable-geos --with-geos-lib=${prefix}/lib --with-geos-include=${prefix}/include \
   					--enable-proj --with-proj-lib=${prefix}/lib --with-proj-include=${prefix}/include
 
