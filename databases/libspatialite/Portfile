@@ -4,50 +4,51 @@
 PortSystem 1.0
 
 name			libspatialite
-version			2.3.1
+version			2.4.0
 categories		databases gis
 platforms		darwin
 maintainers		nomad-labs.com:kashif
 description		Spatial extensions for SQLite 3
 long_description	SpatiaLite is a library for geographic information \
-			systems (GIS) that implements the core OpenGIS \
-			specification. It provides SQLite with basic support \
-			for spatial data is intended for lightweight GIS \
-			projects.
+				systems (GIS) that implements the core OpenGIS \
+				specification. It provides SQLite with basic support \
+				for spatial data is intended for lightweight GIS \
+				projects.
 
-homepage		http://www.gaia-gis.it/spatialite/
-master_sites		${homepage}
+homepage		http://www.gaia-gis.it/spatialite-2.4.0/
+master_sites	${homepage}
 
 distfiles		libspatialite-amalgamation-${version}.tar.gz \
-			init_spatialite-2.3.sql.gz
+				init_spatialite-2.4.sql.gz
 
-extract.only		libspatialite-amalgamation-${version}.tar.gz
+extract.only	libspatialite-amalgamation-${version}.tar.gz
 
 worksrcdir		libspatialite-amalgamation-${version}
 
 checksums		libspatialite-amalgamation-${version}.tar.gz \
-				md5	3e1b15a55a0bd511e6437fdb604a10b1 \
-				sha1	7582979576c12be1952aa85334b1d0a143485a12 \
-				rmd160	64f8ea11f30a66c5f9eb304308bc01dca75b646a \
-			init_spatialite-2.3.sql.gz \
-				md5	3a12245d8254624950550490ffa6bcf3 \
-				sha1	7bd814b973f439c99e6d21be82bc445bb4248e1e \
-				rmd160	c9055ebcddc5dd93aa900c3c130ecba025f4a09a
+				md5	4fb9d4f6e04c74c25ef049e9b3fbf54f \
+				sha1	40360af37562fd1b82f9a092875d51c6eb2d6fa2 \
+				rmd160	94e65266c63b6f25180dff23658f64e9a682b4e7 \
+				init_spatialite-2.4.sql.gz \
+				md5		7f69a132e690186d2cd4b4deb2cacf50 \
+				sha1	43aec4934bd45b22c586d2e49733630079e40826 \
+				rmd160	a7631affae4d9148ec0a85e46ac210ca0e56af0d
 
 depends_lib		port:sqlite3 \
-			port:geos \
-			port:proj
+				port:geos \
+				port:proj
 
 configure.ldflags-append	-liconv -lintl -lcharset
+
 configure.args		--enable-geos --with-geos-lib=${prefix}/lib --with-geos-include=${prefix}/include \
   					--enable-proj --with-proj-lib=${prefix}/lib --with-proj-include=${prefix}/include
 
-					use_parallel_build      no
-					build.type              gnu
+use_parallel_build	no
+build.type		gnu
 
 post-destroot {
 	# Set up the init SQL
 	set sharedir ${destroot}/${prefix}/share/spatialite
 	file mkdir ${sharedir}
-	system "gzip -cd ${distpath}/init_spatialite-2.3.sql.gz > ${sharedir}/init_spatialite-2.3.sql"
+	system "gzip -cd ${distpath}/init_spatialite-2.4.sql.gz > ${sharedir}/init_spatialite-2.4.sql"
 }

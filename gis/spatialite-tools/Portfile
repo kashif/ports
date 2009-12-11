@@ -4,7 +4,7 @@
 PortSystem		1.0
 
 name 			spatialite-tools
-version 		2.3.1
+version 		2.4.0
 categories 		gis
 platforms		darwin
 maintainers		nomad-labs.com:kashif
@@ -16,13 +16,13 @@ long_description	Spatialite tools provides a set of useful CLI tools such as \
 				tool to check anomalous shapefiles, and exif_loader: an import tool \
 				for EXIF or EXIF-GPS pictures.
 
-homepage		http://www.gaia-gis.it/spatialite/
+homepage		http://www.gaia-gis.it/spatialite-2.4.0/
 platforms		darwin
 master_sites	${homepage}
 
-checksums		md5     40895fd4bf7a21b3629c9face258dcd6 \
-				sha1    f6179f20054118c0209c07e36f4e8fae87482530 \
-				rmd160  ca7b6ebf5a3e302bbecfefe1543f70d5c14ca76f
+checksums		md5     9057efba1e865ab95034a3d33331c83d \
+				sha1    0651a68b255bb71268b9e327f8cb381440de82e3 \
+				rmd160  1f693b310bc38794152627af1f3dfe5a47b34d51
 
 depends_lib		port:readline \
 				port:libspatialite \
@@ -30,7 +30,7 @@ depends_lib		port:readline \
 				port:proj
 
 configure.ldflags-append	-liconv -lintl -lcharset
+
 configure.args	--enable-geos --with-geos-lib=${prefix}/lib --with-geos-include=${prefix}/include \
 				--enable-proj --with-proj-lib=${prefix}/lib --with-proj-include=${prefix}/include \
 				--with-spatialite-lib=${prefix}/lib
-
