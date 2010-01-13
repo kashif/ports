@@ -20,9 +20,9 @@ homepage		http://www.gaia-gis.it/spatialite-${version}/
 platforms		darwin
 master_sites	${homepage}
 
-checksums		md5     9057efba1e865ab95034a3d33331c83d \
-				sha1    0651a68b255bb71268b9e327f8cb381440de82e3 \
-				rmd160  1f693b310bc38794152627af1f3dfe5a47b34d51
+checksums		md5     ea508c0d7c7a58d4b75fe82ee62d8591 \
+				sha1    ae4279d67cc7c189566fc73449f27b074cb4dd67 \
+				rmd160  0450dfbc483b254692ea2bccd0585576bdd6a765
 
 depends_lib		port:readline \
 				port:libspatialite \

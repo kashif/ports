@@ -26,9 +26,9 @@ extract.only	libspatialite-amalgamation-${version}.tar.gz
 worksrcdir		libspatialite-amalgamation-${version}
 
 checksums		libspatialite-amalgamation-${version}.tar.gz \
-				md5	4fb9d4f6e04c74c25ef049e9b3fbf54f \
-				sha1	40360af37562fd1b82f9a092875d51c6eb2d6fa2 \
-				rmd160	94e65266c63b6f25180dff23658f64e9a682b4e7 \
+				md5	9519c71b80037efccde02e046342f239 \
+				sha1	294964fb8683bde4cef2759dbf45d09521e12303 \
+				rmd160	7850fc176b1fdf3c9f61509ce49fc1f3648a6476 \
 				init_spatialite-2.4.sql.gz \
 				md5		7f69a132e690186d2cd4b4deb2cacf50 \
 				sha1	43aec4934bd45b22c586d2e49733630079e40826 \
