@@ -16,7 +16,7 @@ long_description	Spatialite tools provides a set of useful CLI tools such as \
 				tool to check anomalous shapefiles, and exif_loader: an import tool \
 				for EXIF or EXIF-GPS pictures.
 
-homepage		http://www.gaia-gis.it/spatialite-2.4.0/
+homepage		http://www.gaia-gis.it/spatialite-${version}/
 platforms		darwin
 master_sites	${homepage}
 
