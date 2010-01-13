@@ -4,7 +4,7 @@
 PortSystem 1.0
 
 name			sqlite3
-version			3.6.20
+version			3.6.22
 revision		1
 categories		databases
 platforms		darwin
@@ -22,9 +22,9 @@ homepage		http://www.sqlite.org/
 master_sites	${homepage}
 distname		sqlite-${version}
 dist_subdir		${name}/${version}
-checksums           md5     0faf8fc8ccff5297513c6532b2b4ce23 \
-                    sha1    8e50d1bdab6ab7dbc9c6398cc4ef4d709b114528 \
-                    rmd160  d08cb8d39526ca3a85d4bc2dba6ba88ac62211c2
+checksums		md5     a17bd53f1fde11f84adf79c6a1510ce5 \
+				sha1    7a29a469d5e28040224a934ed0c28041412876d8 \
+				rmd160  3de220362e58589649b068519b9d2aa021371ca4
 
 depends_lib		port:readline \
 				port:tcl \
@@ -52,4 +52,3 @@ livecheck.regex	sqlite-(\[0-9\\.\]+\[0-9\])\\.
 post-destroot {
 	xinstall -m 644 ${worksrcpath}/${name}.1 ${destroot}${prefix}/share/man/man1
 }
-
