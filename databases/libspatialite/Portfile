@@ -15,7 +15,7 @@ long_description	SpatiaLite is a library for geographic information \
 				for spatial data is intended for lightweight GIS \
 				projects.
 
-homepage		http://www.gaia-gis.it/spatialite-2.4.0/
+homepage		http://www.gaia-gis.it/spatialite-${version}/
 master_sites	${homepage}
 
 distfiles		libspatialite-amalgamation-${version}.tar.gz \
@@ -34,9 +34,8 @@ checksums		libspatialite-amalgamation-${version}.tar.gz \
 				sha1	43aec4934bd45b22c586d2e49733630079e40826 \
 				rmd160	a7631affae4d9148ec0a85e46ac210ca0e56af0d
 
-depends_lib		port:sqlite3 \
-				port:geos \
-				port:proj
+depends_lib		port:proj \
+				port:geos
 
 configure.ldflags-append	-liconv -lintl -lcharset
 
